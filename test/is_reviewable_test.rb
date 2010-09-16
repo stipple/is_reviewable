@@ -211,15 +211,15 @@ class IsReviewableTest < Test::Unit::TestCase
     #   * http://blog.confabulus.com/2008/11/24/testing-named-scopes, or similar.
     
     should "define named scopes" do
-      named_scopes = [
+      scopes = [
           :between_dates
         ]
       
       # Example: Review.complete.proxy_options # => :conditions=>["rating IS NOT NULL AND body IS NOT NULL AND LENGTH(body) > 0"]}
       
       # Old: This won't work...
-      # assert named_scopes.all? { |named_scope| Review.respond_to?(named_scope, true) }
-      #assert named_scopes.all? { |named_scope| @reviewable_post.reviews.respond_to?(named_scope, true) }
+      # assert scopes.all? { |scope| Review.respond_to?(scope, true) }
+      #assert scopes.all? { |scope| @reviewable_post.reviews.respond_to?(scope, true) }
     end
     
     should "return reviews by creation date with named scope :in_order" do
