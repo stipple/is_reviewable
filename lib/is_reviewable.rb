@@ -22,7 +22,7 @@ module IsReviewable
   
   mattr_accessor :verbose
   
-  @@verbose = ::Object.const_defined?(:RAILS_ENV) ? (::RAILS_ENV.to_sym == :development) : true
+  @@verbose = ::Object.const_defined?(:::Rails.env) ? (::::Rails.env.to_sym == :development) : true
   
   def log(message, level = :info)
     return unless @@verbose
