@@ -30,7 +30,6 @@ module IsReviewable
     scope :highest_rating,      :order => 'rating DESC'
     
     # Named scopes: Filters.
-    scope :limit,               lambda { |number_of_items|      {:limit => number_of_items} }
     scope :since,               lambda { |created_at_datetime|  {:conditions => ['created_at >= ?', created_at_datetime]} }
     scope :recent,              lambda { |arg|
                                         if [::ActiveSupport::TimeWithZone, ::DateTime].any? { |c| c.is_a?(arg) }

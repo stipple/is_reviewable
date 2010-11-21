@@ -336,7 +336,7 @@ module IsReviewable
             # self.cached_average_rating = (self.cached_average_rating + new_rating) / self.cached_total_reviews.to_f
             self.cached_average_rating = self.average_rating(true)
           end
-          self.save_without_validation if self.changed?
+          self.save(:validate => false) if self.changed?
         end
         
         # Checks if a certain value is a valid rating value for this reviewable object.
