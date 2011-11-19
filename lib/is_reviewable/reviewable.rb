@@ -124,7 +124,7 @@ module IsReviewable
         
         # Save the initialized options for this class.
         self.write_inheritable_attribute :is_reviewable_options, options
-        self.class_attribute :is_reviewable_options, :instance_writer => false
+        self.class_inheritable_reader :is_reviewable_options
       end
       
       # Checks if this object reviewable or not.
